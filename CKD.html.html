@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LIVER PATIENT ANALYSIS</title>
+<link rel="stylesheet" href="style1.css" type="text/css">
+</head>
+<body>
+<div class="main">
+<div class="liver patient analysis">
+<h1>LIVER PATIENT ANALYSIS</h1>
+<form id="liver" method="post">
+<label>AGE:</label>
+<br>
+<input type="text" name="age" id="age" placeholder="enter your
+age">
+<br><br>
+<label>GENDER:</label>
+<br>
+&nbsp;&nbsp;&nbsp;
+<input type="radio" name="gender" id="male" >
+<span id="male">male</span>
+&nbsp;
+<input type="radio" name="gender" id="female" >
+<span id="Female">female</span>
+<br><br>
+<label>TOTAL _BILIRUBIN:</label>
+<br>
+<input type="text" name="total_bilirubin" id="total_bilirubin" >
+<br><br>
+<label>DIRECT_BILIRUBIN:</label>
+<br>
+<input type="text" name="direct_bilirubin" id="direct_bilirubin" >
+<br><br>
+<label>ALKALINE_PHOSPOTASE:</label
+<br>
+<input type="text" name="alkaline_phospotase"
+id="alkaline_phospotase" >
+<br><br>
+<label>ALAMINE_AMINOTRANSFERASE:</label>
+<br>
+<input type="text" name="alamine_aminotransferase"
+id="alamine_aminotransferase" >
+<br><br>
+<label>ASPARTATE_AMINOTRANSFERASE:</label>
+<br>
+<input type="text" name="aspartate_aminotransferase"
+id="aspartate_aminotransferase" >
+<br><br>
+<label>TOTAL _PROTEINS:</label>
+<br>
+<input type="text" name="total_proteins" id="total_proteins" >
+<br><br>
+<label>ALBUMIN:</label>
+
+<br>
+<input type="text" name="albumin" id="albumin" >
+<br><br>
+<label>ALBUMIN_AND_GLOBULIN_RATIO:</label>
+<br>
+<input type="text" name="albumin_and_globulin_ratio"
+id="albumin_and_globulin_ratio" >
+<br><br>
+</form>
+<header>
+<div class="button">
+<a
+href="Predict.html"class="btn">PREDICT</a><center></center></a><br><br>
+</div>
+</header>
+</body>
+</html>
+
+Index.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>LIVER PREDICTION</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css"
+href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.mi
+n.css">
+</head>
+<body>
+<header>
+<div>
+<ul>
+<li class="active"><a href="index.html"><i class="fa
+fa-home"></i>HOME</a></li>
+<li><a href="home.html">GO TO PREDICT</a></li>
+</ul>
+</div> <div class="title">
+<br><br><br><br><br><br><br><br><h1>INTRODUCTION<br><br>Liver is the
+largest internal organ in the human body,it is essential for digesting food and
+releasing the
+toxic element of the body and plays a major role in metabolism and serving
+several vital functions. The
+liver is the largest glandular organ of the body. It weighs about 3 lb (1.36
+kg) .The liver's main job is to
+strain the blood coming from the digestive tract, before passing it to the rest
+of the body. The liver also
+detoxifies chemicals and metabolizes drugs.<br>As it does so, the liver hides
+bile that ends up back in the
+intestines. The liver also makes proteins important for blood clotting and
+other functions.The liver supports
+almost every organ in the body and is vital for our survival. Liver diseases
+are diagnosed based on the liver functional test.
+Some of the diseases are Wilson's disease,liver cancer, and cirrhosis.</div>
+</header>
+</body>
+</html>
+
+Predict.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>LIVER PATIENT ANALYSIS</title>
+<link rel="stylesheet" href="style2.css" type="text/css">
+</head>
+<div class="col-md-3"></div>
+<div class="col-md-6">
+<body>
+<div class="row" style="margin-bottom: 477px;">
+<div class="card card-body alert
+alert-danger"><br><br><br><br><br><center>You have a liver desease problem,You
+must and should consult a docter.Take care.</center></div><br>
+<div class="card card-body alert
+alert-success"><br><br><br><br><center>You dont have a liver desease
+problem.</center></div><br><br>
+<div class="row">
+<div class="col-md-4"></div>
+<a href="index.html"><center>Back to Index</center></a>
+<div class="col-md-4"></div>
+</div>
+</div>
+<div class="col-md-3"></div>
+</div>
+</body>
+</html>
+
+Project.py;
+
+from flask import Flask,render_template,request
+import numpy as np
+import pickle
+app=Flask(__name__)
+@app.route('/')
+def home():
+return render_template('home.html')
+@app.route('/predict')
+def index():
+return render_template("index.html")
+@app.route('/data_predict', methods=['POST'])
+def predict():
+age= request.form['age']
+Gender = request.form['Gender']
+tb = request.form['tb']
+db = request.form['db']
+ap = request.form['ap']
+aa1 = request.form['aa1']
+aa2 = request.form['aa2']
+tp = request.form['tp']
+a = request.form['a']
+agr = request.form['agr']
+# coverting data into float format
+data = [[Float(age), float(gender), float(tb), float(db), float(ap),
+float(aa1), float(aa2), Float(tp), float(tp),
+float(a), float(agr)]]
+# Loading model which we saved
+model = pickle.load(open('liver_analysis.pkl', 'rb'))
+prediction = model.predict(data)[0]
+if (prediction == 1):
+return render_template('noChance.html', prediction='You have a liver
+desease problem, You must and')
+else: return render_template('chance.html', prediction='You dont have a
+liver desease problem')
+if __name__=='__main__':
+app.run()

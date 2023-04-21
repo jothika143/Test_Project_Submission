@@ -1,0 +1,223 @@
+*{
+margin: 0;
+padding: 0;
+font-family: Century Gothic;
+} header{
+background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+url(../aa.jpg);
+height: 100vh;
+background-size:cover;
+background-position:center;
+min-height:120px;
+} ul{
+float:right;
+list-style-type: none;
+margin-top: 30px;
+margin-right:60px ;
+} ul li{
+display: inline-block;
+} ul li a{
+text-decoration: none;
+color: #fff;
+padding: 5px 20px;
+border: 1px solid transparent;
+transition: 0.5s ease;
+}
+ul li a:hover{
+background-color: #fff;
+color: #000;
+}
+ul li.active a{
+background-color:#fff;
+color: #000;
+}
+.logo img{
+float:left;
+width: 20%;
+height: 20%;
+}
+.main{
+max-width: 1200px;
+margin:auto;
+}
+.title{
+position:center;
+} .
+title h1{
+color:yellow;
+font-size:20px;
+font-family:Times new roman;
+padding-left:20px;
+padding-bottom:25px;
+line-height:30px
+text-align:center;
+} .
+button{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+}
+.btn{
+border: 1px solid #fff;
+padding: 5px 20px;
+color: #fff;
+transition: 0.6s ease;
+font-size: 18px;
+text-decoration: none;
+}
+.btn:hover{
+background-color: #fff;
+color: #000;
+}
+.sub-menu{
+display: none;
+top:6%;
+position: relative;
+}
+.sub-menu ul{
+position: absolute;
+}
+.main ul li:hover .sub-menu
+{
+display: block;
+position: absolute;
+background-color: rgb(0,45,117);
+margin-top: 12px;
+margin-left: -8px;
+}
+.main ul li:hover .sub-menu ul
+{
+display: block;
+margin:6px;
+} .
+main ul li:hover .
+sub-menu ul li
+{
+width: 75px;
+padding: 5px;
+border-bottom: 1px#fff;
+background: transparent;
+transition: 0.4s ease;
+text-align: left;
+border-radius: 0;
+}
+.main ul li:hover .sub-menu ul li:last-child
+{
+border-bottom: none;
+}
+
+Style1.css
+
+{
+margin:0;
+padding:0;
+}
+body{
+background:url("liver.jpg");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+} div.main{
+width:400px;
+margin:100px auto 0px auto;
+} h1{
+text align: center;
+color:yellow;
+padding: 20px;
+font-family: sans-serif;
+} div.liver{
+background-color:rgba(0,0,0,0.5);
+width:100%;
+font-size:18px;
+border-radius:35px;
+border:1px soid rgba(255,255,255,0.3);
+box-shadow:2px,2px,15px
+rgba(0,0,0,0.3);
+color:#fff;
+} form#liver{
+margin:40px;
+} label{
+font-family:sans-serif;
+font-size:18px;
+font-style:italic;
+} input#name{
+width:300px;
+border:1px solid #ddd;
+border-radius:3px;
+outline:0;
+padding:7px;
+background-color:#fff;
+box-shadow:inset 1px 1px 5px;
+} .
+btn{
+border: 5px solid #fff;
+padding:5px 20px;
+color:yellow;
+transition: 0.6s ease;
+font-size: 18px;
+text-decoration:center;
+text align: center;
+}
+label,span,h1{
+text-shadow:1px 1px 5px
+rgba(0,0,0,0.3);
+}
+
+Style2.css
+
+{
+margin:0;
+padding:0;
+}
+body{
+background:url("liver2.jpg");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+} div.main{
+width:400px;
+margin:100px auto 0px auto;
+} h1{
+text align: center;
+color:yellow;
+padding: 20px;
+font-family: sans-serif;
+} div.row{
+background-color:rgba(0,0,0,0.5);
+width:100%;
+font-size:30px;
+font_family:Times New Roman;
+border-radius:35px;
+border:1px soid rgba(255,255,255,0.3);
+box-shadow:2px,2px,15px
+rgba(0,0,0,0.3);
+color:#fff;
+} form#liver{
+margin:40px;
+} label{
+font-family:sans-serif;
+font-size:18px;
+font-style:italic;
+} input#name{
+width:300px;
+border:1px solid #ddd;
+border-radius:3px;
+outline:0;
+padding:7px;
+background-color:#fff;
+box-shadow:inset 1px 1px 5px;
+} .
+btn{
+border: 5px solid #fff;
+padding:5px 20px;
+color:yellow;
+transition: 0.6s ease;
+font-size: 18px;
+text-decoration:center;
+text align: center;
+}
+label,span,h1{
+text-shadow:1px 1px 5px
+rgba(0,0,0,0.3);
+}
